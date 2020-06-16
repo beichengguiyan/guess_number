@@ -1,8 +1,32 @@
 package com.twschool.practice;
 
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class GuessNumber {
 
+    private static final int PLAY_TIMES = 6;
+    private  List<String> resultList = new ArrayList<String>();
+
+    public static void main(String[] args) {
+
+    }
+
+    //记录并历史数据
+    public String playGame(String input) {
+        return this.playGame(input,generateAnswer());
+    }
+
+    public String playGame(String input, String answer) {
+        String result;
+        if (!judgeInput(input)) {
+            System.out.println("输入非法，请重新输入");
+        }
+        result = judgeNumberAndPosition(answer, input);
+        resultList.add(result);
+        return result;
+    }
     //随机生成答案
     public String generateAnswer() {
         String answer = "";
