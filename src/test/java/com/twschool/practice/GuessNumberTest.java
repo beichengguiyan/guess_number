@@ -95,4 +95,19 @@ public class GuessNumberTest {
         // then
         Assert.assertThat(result, is("0A4B"));
     }
+
+    @Test
+    public void should_return_true_when_given_1234() {
+        // given
+        GuessNumber guessNumber = new GuessNumber();
+        String input ="1234";
+        boolean result;
+
+        // when
+        result = guessNumber.judgeInput(input);
+
+        // then
+        Assert.assertThat(result, is(true));
+    }
+
 }

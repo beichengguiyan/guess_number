@@ -3,6 +3,20 @@ package com.twschool.practice;
 
 public class GuessNumber {
 
+    public boolean judgeInput(String input) {
+        if (input.length() != 4) {
+            return false;
+        }
+        StringBuffer sb = new StringBuffer(input);
+        String rs = sb.reverse().toString().replaceAll("(.)(?=.*\\1)", "");
+        StringBuffer out = new StringBuffer(rs);
+        String result = out.reverse().toString();
+        if (result.length() != 4) {
+            return false;
+        }
+        return true;
+    }
+
     public String judgeNumberAndPosition(String answer, String input) {
         String[] answerArray = answer.split("");
         String[] inputArray = input.split("");
