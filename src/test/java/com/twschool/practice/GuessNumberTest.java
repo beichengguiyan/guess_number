@@ -110,4 +110,17 @@ public class GuessNumberTest {
         Assert.assertThat(result, is(true));
     }
 
+    @Test
+    public void should_return_false_when_given_1233() {
+        // given
+        GuessNumber guessNumber = new GuessNumber();
+        String input ="1233";
+        boolean result;
+
+        // when
+        result = guessNumber.judgeInput(input);
+
+        // then
+        Assert.assertThat(result, is(false));
+    }
 }
