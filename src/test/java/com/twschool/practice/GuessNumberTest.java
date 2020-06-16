@@ -50,4 +50,19 @@ public class GuessNumberTest {
         // then
         Assert.assertThat(result, is("1A2B"));
     }
+
+    @Test
+    public void should_return_0A1B_when_given_1234_2789() {
+        // given
+        GuessNumber guessNumber = new GuessNumber();
+        String answer = "1234";
+        String input ="2789";
+        String result =null;
+
+        // when
+        result = guessNumber.judgeNumberAndPosition(answer,input);
+
+        // then
+        Assert.assertThat(result, is("0A1B"));
+    }
 }
