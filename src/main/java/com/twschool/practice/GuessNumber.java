@@ -3,6 +3,20 @@ package com.twschool.practice;
 
 public class GuessNumber {
 
+    //随机生成答案
+    public String generateAnswer() {
+        String answer = "";
+        for (int i = 0; i < 4; ) {
+            String number = String.valueOf((int) (Math.random() * 9));
+            if (!answer.contains(number)) {
+                answer = answer + number;
+                i++;
+            }
+        }
+        return answer;
+    }
+
+    //输入合法校验
     public boolean judgeInput(String input) {
         if (input.length() != 4) {
             return false;
@@ -17,6 +31,7 @@ public class GuessNumber {
         return true;
     }
 
+    //数字位置正确性判断
     public String judgeNumberAndPosition(String answer, String input) {
         String[] answerArray = answer.split("");
         String[] inputArray = input.split("");

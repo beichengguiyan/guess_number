@@ -123,4 +123,20 @@ public class GuessNumberTest {
         // then
         Assert.assertThat(result, is(false));
     }
+
+    @Test
+    public void should_return_true_when_use_generateAnswer() {
+        // given
+        GuessNumber guessNumber = new GuessNumber();
+        String answer =null;
+        boolean result;
+
+        // when
+        answer = guessNumber.generateAnswer();
+        result = guessNumber.judgeInput(answer);
+
+        // then
+        Assert.assertThat(result, is(true));
+    }
+
 }
